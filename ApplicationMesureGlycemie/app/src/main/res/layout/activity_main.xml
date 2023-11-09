@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Le conteneur principal de l'interface utilisateur est un LinearLayout -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    android:padding="20dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <!-- Première TextView pour afficher le titre de l'application -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/title"
+        android:textStyle="bold"
+        android:textSize="24sp" />
+    <!-- Deuxième TextView pour afficher le texte "votre age :" -->
+    <TextView
+        android:id="@+id/tvage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="Votre age :"
+        android:textSize="28dp" />
+    <!-- Barre de progression (SeekBar) pour sélectionner l'âge -->
+    <!-- Troisième TextView pour afficher le texte "Est-ce que vous jeunez ?" -->
+
+    <SeekBar
+        android:id="@+id/sbAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:max="120" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="Est-ce que vous jeunez ?"
+        android:textSize="28dp" />
+    <!-- Groupe de boutons radio (RadioButton) pour sélectionner Oui ou Non -->
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <!-- Bouton radio pour Oui -->
+        <RadioButton
+            android:id="@+id/rbtoui"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Oui"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+        <!-- Bouton radio pour Non -->
+        <RadioButton
+            android:id="@+id/rbtnon"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="Non"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+    </RadioGroup>
+    <!-- Champ de texte (EditText) pour entrer la valeur mesurée -->
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        android:hint="valeur mesurée(en mmol/l)"
+        android:inputType="numberDecimal"
+        />
+    <!-- Bouton pour déclencher l'action "calculer" -->
+    <Button
+        android:id="@+id/btnConsulter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Consulter"
+        android:background="@color/blue2"
+        android:textSize="22dp"
+        android:onClick="calculer"
+        />
+    <TextView
+        android:id="@+id/tvresultat"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:hint="..."
+        />
+</LinearLayout>
